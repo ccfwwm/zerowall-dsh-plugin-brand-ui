@@ -1,0 +1,35 @@
+# ZeroWall Science Brand UI for DSH
+
+This preview DSH plugin applies the ZeroWall Science accent color and replaces the sidebar brand mark and name. It works with DSH `0.2.2-alpha.2` through the `0.2.x` line and is maintained independently from the desktop repository.
+
+The plugin only uses the public sidebar slots and theme token override service. Desktop window chrome, the startup screen, app icon, installer, shortcuts, and update flow belong to the desktop application and are not changed by this plugin.
+
+## Install
+
+In DSH, open **Settings → Plugins → Install from Git** and enter:
+
+```text
+https://github.com/ccfwwm/zerowall-dsh-plugin-brand-ui
+```
+
+Restart DSH after installation. Disable or uninstall the plugin from the same Plugins screen to restore the default DSH brand and theme.
+
+The plugin is also listed by the ZeroWall Science preview Discover index when that index is configured.
+
+## Permissions and network use
+
+The plugin requests no account credentials and makes no network requests. It registers two sidebar UI slots and one reversible theme-token override. DSH removes these registrations when the plugin is disabled or uninstalled.
+
+## Development
+
+Requires Node.js 24.9 or later and npm.
+
+```sh
+npm ci
+npm run check
+npm pack
+```
+
+## Distribution and compatibility
+
+The package declares DSH `>=0.2.2-alpha.2 <0.3.0-0`. It requires the DSH Cordis runtime, sidebar slots, renderer, and theme service at the matching release. DSH Discover indexes pin a Git commit before installation. ZeroWall's signed resource catalog is a separate channel: it verifies a signed catalog, immutable archive digest, and desktop/DSH compatibility before activation. The current `0.1.0-preview.1` release is intended for preview-channel validation; stable promotion requires a ZeroWall signing key and a successful clean-profile install test.
