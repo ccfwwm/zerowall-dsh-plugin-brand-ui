@@ -1,6 +1,7 @@
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
 import type {} from '@deepseek-ai/dsh-client-ui-sidebar/client'
+import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
 import type { ThemeTokenOverrides } from '@deepseek-ai/dsh-client-ui-theme/client'
 import type { SidebarBrandMarkOwnerProps } from '@deepseek-ai/dsh-client-ui-sidebar/client'
 import mark from './assets/zerowall-mark.png'
@@ -27,7 +28,9 @@ export function apply(ctx: ClientContext): void {
   ctx.effect(() => ctx.theme.overrideTokens(PACKAGE_ID, BRAND_TOKENS), 'ZeroWall brand theme')
   ctx.slots.inject('sidebar.brand.mark', () =>
     ctx.slots.inject('sidebar.brand.name', function* () {
-      yield ctx.slots.register({ name: 'sidebar.brand.mark', priority: 100 }, BrandMark)
-      yield ctx.slots.register({ name: 'sidebar.brand.name', priority: 100 }, BrandName)
+      yield ctx.slots.register({ name: 'sidebar.brand.mark', priority: -100 }, BrandMark)
+      yield ctx.slots.register({ name: 'sidebar.brand.name', priority: -100 }, BrandName)
     }))
+  ctx.slots.inject('conversation.hero.brand.mark', () =>
+    ctx.slots.register({ name: 'conversation.hero.brand.mark', priority: -100 }, BrandMark))
 }

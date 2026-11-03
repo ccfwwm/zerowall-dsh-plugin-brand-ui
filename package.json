@@ -1,8 +1,13 @@
 {
   "name": "@zerowall/dsh-plugin-brand-ui",
-  "version": "0.1.0-preview.2",
+  "version": "0.1.0-preview.3",
   "description": "ZeroWall Science sidebar branding and adaptive theme for DSH",
-  "keywords": ["dsh-plugin", "branding", "theme", "zerowall-science"],
+  "keywords": [
+    "dsh-plugin",
+    "branding",
+    "theme",
+    "zerowall-science"
+  ],
   "type": "module",
   "license": "MIT",
   "author": "ZeroWall Science",
@@ -27,7 +32,8 @@
       "default": "./lib/client.js"
     },
     "./locale/en.json": "./locale/en.json",
-    "./locale/zh.json": "./locale/zh.json"
+    "./locale/zh.json": "./locale/zh.json",
+    "./package.json": "./package.json"
   },
   "files": [
     "lib",
@@ -45,7 +51,8 @@
       "inject": [
         "@deepseek-ai/dsh-client-ui-theme",
         "@deepseek-ai/dsh-client-ui-sidebar",
-        "@deepseek-ai/dsh-client-ui-renderer"
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-conversation"
       ],
       "external": [
         "react",
@@ -65,7 +72,8 @@
     "@deepseek-ai/cordis": "4.0.6-alpha.1",
     "@deepseek-ai/dsh-client-ui-theme": "0.2.2-alpha.2",
     "@deepseek-ai/dsh-client-ui-sidebar": "0.2.2-alpha.2",
-    "@deepseek-ai/dsh-client-ui-renderer": "0.2.2-alpha.2"
+    "@deepseek-ai/dsh-client-ui-renderer": "0.2.2-alpha.2",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.2.2-alpha.2"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "4.0.6-alpha.1",
@@ -79,7 +87,8 @@
     "esbuild": "^0.25.0",
     "vitest": "^3.2.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.2.2-alpha.2"
   },
   "dependencies": {}
 }

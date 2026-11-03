@@ -1,8 +1,8 @@
 # ZeroWall Science Brand UI for DSH
 
-This preview DSH plugin applies the ZeroWall Science accent color and replaces the sidebar brand mark and name. It works with DSH `0.2.2-alpha.2` through the `0.2.x` line and is maintained independently from the desktop repository.
+This preview DSH plugin applies the ZeroWall Science accent color, replaces the sidebar brand mark and name, and supplies the conversation hero mark. It works with DSH `0.2.2-alpha.2` through the `0.2.x` line and is maintained independently from the desktop repository.
 
-The plugin only uses the public sidebar slots and theme token override service. Desktop window chrome, the startup screen, app icon, installer, shortcuts, and update flow belong to the desktop application and are not changed by this plugin.
+The plugin only uses the public sidebar and conversation slots and theme token override service. Desktop window chrome, the startup screen, app icon, installer, shortcuts, and update flow belong to the desktop application and are not changed by this plugin.
 
 ## Install
 
@@ -18,7 +18,7 @@ The plugin is also listed by the ZeroWall Science preview Discover index when th
 
 ## Permissions and network use
 
-The plugin requests no account credentials and makes no network requests. It registers two sidebar UI slots and one reversible theme-token override. DSH removes these registrations when the plugin is disabled or uninstalled.
+The plugin requests no account credentials and makes no network requests. It registers three brand slots with priority `-100`, ahead of the default occupants, and one reversible theme-token override. DSH removes these registrations when the plugin is disabled or uninstalled.
 
 ## Development
 
@@ -34,4 +34,4 @@ Git installs consume committed `lib/` artifacts without executing package lifecy
 
 ## Distribution and compatibility
 
-The package declares DSH `>=0.2.2-alpha.2 <0.3.0-0`. It requires the DSH Cordis runtime, sidebar slots, renderer, and theme service at the matching release. DSH Discover indexes pin a Git commit before installation. ZeroWall's signed resource catalog is a separate channel: it verifies a signed catalog, immutable archive digest, and desktop/DSH compatibility before activation. The current `0.1.0-preview.2` release is intended for preview-channel validation; stable promotion requires a ZeroWall signing key and a successful clean-profile install test.
+The package declares DSH `>=0.2.2-alpha.2 <0.3.0-0`. It requires the DSH Cordis runtime, sidebar and conversation brand slots, renderer, and theme service at the matching release. DSH Discover indexes pin a Git commit before installation. ZeroWall's signed resource catalog is a separate channel: it verifies a signed catalog, immutable archive digest, and desktop/DSH compatibility before activation. The current `0.1.0-preview.3` release is intended for preview-channel validation; stable promotion requires a ZeroWall signing key and a successful clean-profile install test.

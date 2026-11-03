@@ -26,7 +26,11 @@ describe('ZeroWall brand UI plugin', () => {
     apply(ctx as never)
     expect(inject).toEqual(['slots', 'theme'])
     expect(ctx.theme.overrideTokens).toHaveBeenCalledOnce()
-    expect(ctx.slots.register).toHaveBeenCalledTimes(2)
-    expect(registrations.map(value => (value as { options: { name: string } }).options.name)).toEqual(['sidebar.brand.mark', 'sidebar.brand.name'])
+    expect(ctx.slots.register).toHaveBeenCalledTimes(3)
+    expect(registrations.map(value => (value as { options: { name: string; priority: number } }).options)).toEqual([
+      { name: 'sidebar.brand.mark', priority: -100 },
+      { name: 'sidebar.brand.name', priority: -100 },
+      { name: 'conversation.hero.brand.mark', priority: -100 },
+    ])
   })
 })
