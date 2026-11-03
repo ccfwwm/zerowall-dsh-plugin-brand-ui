@@ -31,5 +31,3 @@ export function apply(ctx: ClientContext): void {
       yield ctx.slots.register({ name: 'sidebar.brand.name', priority: 100 }, BrandName)
     }))
 }
-
-export default { inject, apply }

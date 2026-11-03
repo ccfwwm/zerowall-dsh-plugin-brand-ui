@@ -30,6 +30,8 @@ npm run check
 npm pack
 ```
 
+Git installs consume committed `lib/` artifacts without executing package lifecycle scripts. Run `npm run check` before packing or committing those artifacts. CI verifies that rebuilding leaves `lib/` unchanged. The tarball includes generated declarations for both public entry points.
+
 ## Distribution and compatibility
 
-The package declares DSH `>=0.2.2-alpha.2 <0.3.0-0`. It requires the DSH Cordis runtime, sidebar slots, renderer, and theme service at the matching release. DSH Discover indexes pin a Git commit before installation. ZeroWall's signed resource catalog is a separate channel: it verifies a signed catalog, immutable archive digest, and desktop/DSH compatibility before activation. The current `0.1.0-preview.1` release is intended for preview-channel validation; stable promotion requires a ZeroWall signing key and a successful clean-profile install test.
+The package declares DSH `>=0.2.2-alpha.2 <0.3.0-0`. It requires the DSH Cordis runtime, sidebar slots, renderer, and theme service at the matching release. DSH Discover indexes pin a Git commit before installation. ZeroWall's signed resource catalog is a separate channel: it verifies a signed catalog, immutable archive digest, and desktop/DSH compatibility before activation. The current `0.1.0-preview.2` release is intended for preview-channel validation; stable promotion requires a ZeroWall signing key and a successful clean-profile install test.
