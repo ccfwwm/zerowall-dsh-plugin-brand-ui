@@ -22,6 +22,8 @@ The plugin requests no account credentials and makes no network requests. It reg
 
 ## Development
 
+Use the canonical `C:\codekg\scienceproject\zerowall-dsh-plugin-brand-ui` checkout on `main`; keep one active source directory per plugin. See the shared [ZeroWall development, migration, packaging, and testing guide](https://github.com/ccfwwm/zerowallscience-newui/blob/main/docs/developer/zerowall/README.zh.md) and [AGENTS.md](AGENTS.md).
+
 Requires Node.js 24.9 or later and npm.
 
 ```sh
